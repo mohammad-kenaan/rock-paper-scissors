@@ -10,7 +10,7 @@ init();
 
 function init() {
   for (let i = 1; i <= 5; i++) {
-    console.log(`%c Round Number: ${i}`, `padding: 25px 100px 25px 100px; background-color: teal;`);
+    console.log(`%c Round Number: ${i}`, `padding: 25px 200px 25px 200px; background-color: teal;`);
     computerChoice = getComputerChoice();
     humanChoice = getHumanChoice();
     playRound(computerChoice, humanChoice);
@@ -25,11 +25,12 @@ function getComputerChoice() {
 
 function getHumanChoice() {
   let choice = prompt("choose one of these options: Rock, Paper or scissors");
-  if (choice === null) return null;
-  choice = choice.toLowerCase().trim();
-  while (!choices.includes(choice)) {
-    choice = prompt("Invalid choice! choose one of these options: Rock, Paper or scissors");
+
+  while (true) {
     if (choice === null) return null;
+    choice = choice.toLowerCase().trim();
+    if(choices.includes(choice)) break;
+    choice = prompt("Invalid choice! choose one of these options: Rock, Paper or scissors");
   }
   return choice;
 }
@@ -90,7 +91,7 @@ function getScores() {
 }
 
 function getResult() {
-  console.log(`%c The Game is Over!` , `padding: 25px 100px 25px 100px; background-color: white; color: black` );
+  console.log(`%c The Game is Over!` , `padding: 25px 200px 25px 200px; background-color: white; color: black` );
   const winner = humanScore > computerScore ? "Congrats! You are the winner" : humanScore < computerScore ?  "the winner is the computer " : "We tied";
   console.log( `%c  ${winner}`, `padding: 25px 50px; font-size: 24px; color:tomato`);
 }
