@@ -5,18 +5,28 @@ let computerScore = 0;
 const choices = ["rock", "paper", "scissors"];
 let computerChoice;
 let humanChoice;
+const GAME_ROUNDS = 5;
 
 init();
 
 function init() {
-  for (let i = 1; i <= 5; i++) {
-    console.log(`%c Round Number: ${i}`, `padding: 25px 200px 25px 200px; background-color: teal;`);
+
+  playGame(GAME_ROUNDS);
+}
+
+function playGame(rounds) {
+  for (let i = 1; i <= rounds; i++) {
+    console.log(`%c Round ${i}`, `
+      padding: 25px 100px 25px 100px; background-color: teal;`);
     computerChoice = getComputerChoice();
     humanChoice = getHumanChoice();
+    if (humanChoice === null) {
+      console.log("Game Over");
+      return;
+    }
     playRound(computerChoice, humanChoice);
-    if (humanChoice === null)  break;
-    if( i === 5 )  getResult();
   }
+  getResult();
 }
 
 function getComputerChoice() {
@@ -24,74 +34,61 @@ function getComputerChoice() {
 }
 
 function getHumanChoice() {
-  let choice = prompt("choose one of these options: Rock, Paper or scissors");
+  let choice = prompt("Choose one of these options: Rock, Paper or Scissors");
 
   while (true) {
     if (choice === null) return null;
     choice = choice.toLowerCase().trim();
-    if(choices.includes(choice)) break;
-    choice = prompt("Invalid choice! choose one of these options: Rock, Paper or scissors");
+    if (choices.includes(choice)) break;
+    choice = prompt("Invalid choice! choose one of these options: Rock, Paper or Scissors");
   }
   return choice;
 }
 
 
 function playRound(computerChoice, humanChoice) {
-  if (humanChoice === null) {
-    console.log("Game Over");
-    return;
-  }
-  console.log(`computer choice: %c ${computerChoice}`, `color: wheat`);
+
+  console.log(`Computer choice: %c ${computerChoice}`, `color: wheat`);
   console.log(`User choice: %c ${humanChoice}`, `color: wheat`);
 
   if (computerChoice === humanChoice) console.log("%cWe tied!", "font-size: 20px; color: gray");
-  if (computerChoice === "rock" && humanChoice !== "rock") {
-    if (humanChoice === "scissors") computerWin();
-    else humanWin();
+  else {
+    if (computerChoice === "rock") {
+      if (humanChoice === "scissors") incrementComputerScore();
+      else incrementHumanScore();
+    }
+    if (computerChoice === "scissors") {
+      if (humanChoice === "paper") incrementComputerScore();
+      else incrementHumanScore();
+    }
+    if (computerChoice === "paper") {
+      if (humanChoice === "rock") incrementComputerScore();
+      else incrementHumanScore();
+    }
   }
-  if (computerChoice === "scissors" && humanChoice !== "scissors") {
-    if (humanChoice === "paper") computerWin();
-    else humanWin();
-  }
-  if (computerChoice === "paper" && humanChoice !== "paper") {
-    if (humanChoice === "rock") computerWin();
-    else humanWin();
-  }
-
+  getScores();
 }
 
 
-function computerWin() {
+function incrementComputerScore() {
   computerScore++;
-  console.log(`%cYou lose! %c${computerChoice} beats ${humanChoice}`,`color: orange; font-size: 16px`,`color: white; font-size: 12px`);
-  getScores();
+  console.log(`%cYou lose this round! %c${computerChoice} beats ${humanChoice}`, `color: orange; font-size: 16px`, `color: white; font-size: 12px`);
 }
 
-function humanWin() {
+function incrementHumanScore() {
   humanScore++;
-  console.log(`%cYou win! %c${humanChoice} beats ${computerChoice}`, `color: lime; font-size: 16px`, `color: white; font-size: 12px` );
-  getScores();
+  console.log(`%cYou win this round! %c${humanChoice} beats ${computerChoice}`, `color: lime; font-size: 16px`, `color: white; font-size: 12px`);
 }
 
 function getScores() {
   console.group(`The scores are:`);
-  if (computerScore > humanScore){
-  console.log(`%c Computer: %c ${computerScore}`, `color: lime `, `color: white`);
-  console.log(`%c Human: %c ${humanScore}`, `color: orange`, `color: white`);
-  }
-  else if (computerScore === humanScore){
-    console.log(`%c Computer: %c ${computerScore}`, `color: tomato `, `color: white`);
-    console.log(`%c Human: %c ${humanScore}`, `color: tomato`, `color: white`);
-    }
-  else {
-    console.log(`%c Computer: %c ${computerScore}`,`color: orange`, `color: white`);
-    console.log(`%c Human: %c ${humanScore}`, `color: lime`, `color: white`);
-  }
+  console.log(`Computer: ${computerScore}`);
+  console.log(`Human: ${humanScore}`);
   console.groupEnd();
 }
 
 function getResult() {
-  console.log(`%c The Game is Over!` , `padding: 25px 200px 25px 200px; background-color: white; color: black` );
-  const winner = humanScore > computerScore ? "Congrats! You are the winner" : humanScore < computerScore ?  "the winner is the computer " : "We tied";
-  console.log( `%c  ${winner}`, `padding: 25px 50px; font-size: 24px; color:tomato`);
+  console.log(`%c The Game is Over!`, `padding: 10px 65px; background-color: gray; color: black`);
+  const winner = humanScore > computerScore ? "Congrats! You won the game" : humanScore < computerScore ? "You lost the game" : "We tied";
+  console.log(`%c${winner}`, ` font-size: 24px; color:tomato`);
 }
