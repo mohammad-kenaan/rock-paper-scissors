@@ -11,7 +11,7 @@ init();
 
 function init() {
 
-  playGame(GAME_ROUNDS);
+  //playGame(GAME_ROUNDS);
 }
 
 function playGame(rounds) {
@@ -92,3 +92,4 @@ function getResult() {
   const winner = humanScore > computerScore ? "Congrats! You won the game" : humanScore < computerScore ? "You lost the game" : "We tied";
   console.log(`%c${winner}`, ` font-size: 24px; color:tomato`);
 }
+

@@ -1,0 +1,65 @@
+html {
+  font-size: 0.625em;
+}
+
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.page-header, main {
+
+}
+
+/* Page Header */
+.page-header .container {
+  background-color: black;
+  display: flex;
+  height: 75px;
+}
+
+.page-header .logo img {
+  height: 75px;
+}
+
+.page-header nav {
+  margin-left: auto ;
+}
+
+.page-header nav menu {
+  font-size: 1.6rem;
+  padding: 1em;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  color: white;
+}
+
+
+
+/* Main  */
+main picture img {
+  width: 100%;
+}
+
+main .start-game-btn {
+text-align: center;
+margin-top: 20px;
+transform: translateY(-50px);
+}
+main .start-game-btn a:hover {
+  border: 1px rgb(82, 79, 79) solid;
+  background-color: rgb(44, 180, 96);
+  box-shadow: 5px 5px 10px rgb(8, 7, 7);
+}
+
+main .start-game-btn a {
+  font-size: 3rem;
+  background-color: rgb(76, 173, 113);
+  padding: 0.5em 1.3em;
+  color: white;
+  border-radius: 0.3em;
+  cursor: pointer;
+}
+
