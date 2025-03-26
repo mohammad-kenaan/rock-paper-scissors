@@ -1,0 +1,51 @@
+
+.container {
+  margin: 16px auto;
+  width: 1024px;
+  padding: 16px;
+}
+
+.page-header .container {
+  font-size: 1.5rem;
+  background-color: #f5f4f4;
+}
+
+.page-header .container a {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: rgb(99, 99, 99);
+}
+
+main .container {
+  width: 1024px;
+  display: flex;
+  gap: 20px;
+}
+
+main .container .content { 
+  padding: 0 1rem;
+  flex-grow: 1;
+}
+
+main .container .content h2 {
+  background-color: #f5f4f4;
+  font-size: 1.3rem;
+  font-weight:500;
+  color: rgb(99, 99, 99);
+}
+
+.content p , ul {
+  width: 40ch;
+  font-size: 1rem;
+  padding: 10px;
+  line-height: 2em;
+}
+
+main .container .content span {
+  margin-right: 10px;
+}
+
+main .container picture {
+  margin-right: 10px;
+}
+
