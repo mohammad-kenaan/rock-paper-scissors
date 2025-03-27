@@ -7,13 +7,8 @@ html {
   margin: 0 auto;
 }
 
-.page-header, main {
-
-}
-
 /* Page Header */
 .page-header .container {
-  background-color: rgb(241, 241, 241);
   display: flex;
   height: 70px;
 }
@@ -28,7 +23,7 @@ html {
 }
 
 .page-header nav menu {
-  font-size: 1.8rem;
+  font-size: 2.3rem;
   padding: 1em;
   height: 100%;
   display: flex;
@@ -41,27 +36,90 @@ html {
 
 
 /* Main  */
+main .container picture img {
+  margin-top: 60px;
+}
 main picture img {
   width: 100%;
 }
 
+/* start game btn */
 main .start-game-btn {
-text-align: center;
-margin-top: 20px;
-transform: translateY(-50px);
-}
-main .start-game-btn a:hover {
-  border: 1px rgb(82, 79, 79) solid;
-  background-color: rgb(44, 180, 96);
-  box-shadow: 5px 5px 10px rgb(8, 7, 7);
-}
+  text-align: center;
+  margin: 25px;    /*temporary*/
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  }
 
 main .start-game-btn a {
   font-size: 3rem;
   background-color: rgb(76, 173, 113);
-  padding: 0.5em 1.3em;
+  padding: 0.5em 2em;
   color: white;
   border-radius: 0.3em;
   cursor: pointer;
+
 }
+main .start-game-btn a:hover {
+  border-left: 2px rgb(82, 79, 79) solid;
+  border-right: 2px rgb(82, 79, 79) solid;
+  background-color: rgb(44, 180, 96);
+  box-shadow: 5px 5px 5px rgb(8, 7, 7);
+}
+main .start-game-btn p {
+  margin: 15px;
+  background-color: orange;
+  display: inline-block;
+  font-size: 3rem;
+  border-radius: 0.3em;
+  padding: 0.3em 1.5em;
+}
+
+/* players */
+main .container #players {
+  margin-top: 180px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 10px;
+}
+
+main .container #players .options {
+  width: 400px;
+  height: auto;
+  text-align: center;
+  font-size: 1.1rem;
+}
+main .options p {
+  padding: 0 10px;
+}
+
+main .container #players .options:hover {
+  border-left: 1px aqua solid;
+  box-shadow: 5px 10px 8px rgba(0, 0, 0, 0.3);
+}
+
+main .container #players img {
+  height: 150px;
+  margin: 20px auto;
+  /* transform: rotate(); */
+}
+main .container #players a {
+  display: inline-block;
+  font-size: 2.2rem;
+  margin: 0.8em auto;
+  background-color: gray;
+  color: white;
+  padding: 0.5em 3em;
+  border-radius: 10px;
+}
+
+main #players .options .lock {
+  height: 50px;
+  width: auto;
+  margin: 0 80px 0 auto;
+}
+
 

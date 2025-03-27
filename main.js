@@ -93,3 +93,5 @@ function getResult() {
   console.log(`%c${winner}`, ` font-size: 24px; color:tomato`);
 }
 
+
+
