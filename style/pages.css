@@ -1,25 +1,13 @@
 
 .container {
   margin: 16px auto;
-  width: 1024px;
   padding: 16px;
 }
 
-.page-header .container {
-  font-size: 1.5rem;
-  background-color: #f5f4f4;
-}
-
-.page-header .container a {
-  font-size: 1.5rem;
-  font-weight: 500;
-  color: rgb(99, 99, 99);
-}
-
 main .container {
-  width: 1024px;
   display: flex;
   gap: 20px;
+  flex-wrap: wrap;
 }
 
 main .container .content { 
@@ -49,3 +37,11 @@ main .container picture {
   margin-right: 10px;
 }
 
+main .container .content h2 {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+main .container .content ul {
+  font-size: 1.2rem;
+
+}
