@@ -13,10 +13,10 @@ header nav {
 header nav menu li{
   font-size: 2.5rem;
 }
-main .container {
+main .content {
   display: flex;
-  gap: 20px;
   flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
 main .container .content { 
@@ -35,7 +35,7 @@ main .container .content h1 {
 .content p, ul li {
   width: 30ch;
   padding: 10px;
-  font-size: 2rem;
+  font-size: 1.6rem;
   line-height: 1.5em;
 }
 
@@ -44,7 +44,11 @@ main .container .content span {
 }
 
 
+main .container .content table {
+  margin-bottom: 40px;
+}
 main .container .content table, li {
   font-size: 1.5rem;
   line-height: 1.5em;
 }
+

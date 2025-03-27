@@ -11,7 +11,7 @@ init();
 
 function init() {
 
-  //playGame(GAME_ROUNDS);
+  playGame(GAME_ROUNDS);
 }
 
 function playGame(rounds) {
@@ -51,7 +51,8 @@ function playRound(computerChoice, humanChoice) {
   console.log(`Computer choice: %c ${computerChoice}`, `color: wheat`);
   console.log(`User choice: %c ${humanChoice}`, `color: wheat`);
 
-  if (computerChoice === humanChoice) console.log("%cWe tied!", "font-size: 20px; color: gray");
+  if (computerChoice === humanChoice) console.log("%cWe tied!",
+     "font-size: 20px; color: gray");
   else {
     if (computerChoice === "rock") {
       if (humanChoice === "scissors") incrementComputerScore();
@@ -72,12 +73,14 @@ function playRound(computerChoice, humanChoice) {
 
 function incrementComputerScore() {
   computerScore++;
-  console.log(`%cYou lose this round! %c${computerChoice} beats ${humanChoice}`, `color: orange; font-size: 16px`, `color: white; font-size: 12px`);
+  console.log(`%cYou lose this round! %c${computerChoice} beats ${humanChoice}`
+    , `color: orange; font-size: 16px`, `color: white; font-size: 12px`);
 }
 
 function incrementHumanScore() {
   humanScore++;
-  console.log(`%cYou win this round! %c${humanChoice} beats ${computerChoice}`, `color: lime; font-size: 16px`, `color: white; font-size: 12px`);
+  console.log(`%cYou win this round! %c${humanChoice} beats ${computerChoice}`,
+     `color: lime; font-size: 16px`, `color: white; font-size: 12px`);
 }
 
 function getScores() {
@@ -88,8 +91,11 @@ function getScores() {
 }
 
 function getResult() {
-  console.log(`%c The Game is Over!`, `padding: 10px 65px; background-color: gray; color: black`);
-  const winner = humanScore > computerScore ? "Congrats! You won the game" : humanScore < computerScore ? "You lost the game" : "We tied";
+  console.log(`%c The Game is Over!`,
+     `padding: 10px 65px; background-color: gray; color: black`);
+  const winner = humanScore > computerScore ?
+   "Congrats! You won the game" : humanScore < computerScore ?
+    "You lost the game" : "We tied";
   console.log(`%c${winner}`, ` font-size: 24px; color:tomato`);
 }
 
