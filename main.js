@@ -7,7 +7,7 @@ let computerChoice;
 let humanChoice;
 const GAME_ROUNDS = 5;
 
-init();
+// init();
 
 function init() {
 
@@ -16,8 +16,6 @@ function init() {
 
 function playGame(rounds) {
   for (let i = 1; i <= rounds; i++) {
-    console.log(`%c Round ${i}`, `
-      padding: 25px 100px 25px 100px; background-color: teal;`);
     computerChoice = getComputerChoice();
     humanChoice = getHumanChoice();
     if (humanChoice === null) {

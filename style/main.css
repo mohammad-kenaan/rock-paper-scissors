@@ -47,7 +47,6 @@ main picture img {
 main .start-game-btn {
   text-align: center;
   margin: 25px;    /*temporary*/
-
   display: flex;
   flex-direction: column;
   align-items: center;

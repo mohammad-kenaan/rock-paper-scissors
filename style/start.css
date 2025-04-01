@@ -1,0 +1,169 @@
+menu .game-info {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+menu .game-info .player {
+  margin-top: 50px;
+  width: 30vw;
+  height: 130px;
+  min-width: 15vw;
+}
+
+menu .game-info .player-one {
+  background-image: url("../assets/img/player-num-1.webp");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+menu .game-info .player-two {
+  background-image: url("../assets/img/player-num-2.webp");
+}
+
+menu .game-info #start-id {
+    font-size: 2.5rem;
+    background-color: orange;
+    padding: 0.5em 2em;
+    color: rgb(128, 16, 16);
+    border-radius: 0.3em;
+    cursor: pointer;
+    align-self: center;
+    transform: translateY(160px);
+    font-weight: bold;
+   }
+   menu .game-info #start-id:hover {
+    box-shadow: 5px 5px 5px rgb(8, 7, 7);
+    color: white;
+   }
+
+/* Play Ground */
+menu .play-ground {
+  width: 100vw;
+  height: 500px;
+  background-image: url("../assets/img/playground.png");
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+/* Player One */
+menu .play-ground .player-one-hand {
+  width: 30vw;
+  height: auto;
+}
+.player-one-hand-shake {
+  animation-name: player-one-hand-shake ;
+  animation-duration: 1s;
+  animation-iteration-count: 3;
+  animation-timing-function: ease-out;
+}
+@keyframes player-one-hand-shake  {
+  0%   {transform: translateX(50px);}
+  50%  {transform: translateX(-90px); }
+  100% {transform: translateX(50px); }
+}
+
+/* Player Two */
+menu .play-ground .player-two-hand {
+  width: 30vw;
+  height: auto;
+}
+
+.player-two-hand-shake {
+  animation-name: player-two-hand-shake ;
+  animation-duration: 1s;
+  animation-iteration-count: 3;
+  animation-timing-function: ease-out;
+}
+@keyframes player-two-hand-shake  {
+  0%   {transform: translateX(-50px); }
+  50%  {transform: translateX(90px); }
+  100% {transform: translateX(-50px); }
+}
+
+
+menu .play-ground img {
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+menu .img-bg {
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+menu .options {
+  margin: 0 auto;
+  display: flex;
+  width: fit-content;
+  transform: translateY(-60px);
+}
+menu .options .option {
+  background-color: rgb(69, 100, 112);
+  max-width: 100px;
+  cursor: pointer;
+}
+menu .options .option:hover {
+  border: 2px rgb(82, 79, 79) solid;
+  background-color: rgb(44, 180, 96);
+  box-shadow: 5px 5px 5px rgb(8, 7, 7);
+}
+menu .options .option img {
+  padding: 5px 5px;
+  width: 100%;
+}
+/* Bar */
+.rounds {
+  display: flex;
+  transform: translateY(-50px);
+  justify-content: center;
+}
+
+.round {
+  width: 30px;
+  height: 30px;
+  margin: 5px;
+  border: 2px solid #000;
+  border-radius: 50%;
+  background-color: white;
+  transition: background-color 0.3s;
+}
+
+.win {
+  background-color: green;
+}
+
+.lost {
+  background-color: red;
+}
+
+.button-container {
+  margin-top: 20px;
+}
+
+.winner {
+  animation-name: gameWinner;
+  animation-duration: 4s;
+}
+@keyframes gameWinner {
+  0%   {background-color: white;}
+  25%  {background-color: green;}
+  50%  {background-color: white;}
+  100% {background-color: green;}
+}
+
+.tide {
+  animation-name: gameTide;
+  animation-duration: 4s;
+}
+@keyframes gameTide {
+  0%   {background-color: white;}
+  25%  {background-color: orange;}
+  50%  {background-color: white;}
+  100% {background-color: orange;}
+}
